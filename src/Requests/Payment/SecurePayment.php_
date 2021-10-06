@@ -1,0 +1,10 @@
+<?php
+
+namespace Simpliers\Parampos\Requests\Payment;
+
+use Simpliers\Parampos\Requests\SecurePaymentInterface;
+
+class SecurePayment extends PaymentModel implements SecurePaymentInterface
+{
+    protected $secure_type = '3D';
+}

@@ -1,0 +1,35 @@
+{
+  "name": "simpliers/parampos",
+  "authors": [
+    {
+      "name": "Sinan Portakal",
+      "email": "sinanportakal@yahoo.com"
+    }
+  ],
+  "keywords": [
+    "laravel"
+  ],
+  "require": {
+    "illuminate/support": "^8.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Simpliers\\Parampos\\": "./src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Simpliers\\Parampos\\Tests\\": "tests"
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Simpliers\\Parampos\\ParamposServiceProvider"
+      ]
+    }
+  }
+}
