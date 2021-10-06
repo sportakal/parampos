@@ -6,7 +6,7 @@ namespace Simpliers\Parampos\Request;
 
 use DOMDocument;
 use DOMElement;
-use Simpliers\Parampos\Exceptions\ParamposException;
+use Simpliers\Parampos\Exception\ParamposException;
 
 trait MakeRequest
 {

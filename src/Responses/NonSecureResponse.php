@@ -5,7 +5,7 @@ namespace Simpliers\Parampos\Responses;
 
 use DOMDocument;
 use DOMElement;
-use Simpliers\Parampos\Exceptions\ParamposException;
+use Simpliers\Parampos\Exception\ParamposException;
 use Simpliers\Parampos\Requests\NonSecurePaymentInterface;
 
 class NonSecureResponse extends ResponseModel

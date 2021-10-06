@@ -9,7 +9,7 @@ use Http;
 use Illuminate\Database\Eloquent\Model;
 use phpDocumentor\Reflection\Location;
 use PhpParser\Builder\Class_;
-use Simpliers\Parampos\Exceptions\ParamposException;
+use Simpliers\Parampos\Exception\ParamposException;
 use Simpliers\Parampos\Models\ParamposLog;
 use Simpliers\Parampos\Requests\SecurePaymentInterface;
 

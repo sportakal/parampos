@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Simpliers\Parampos\Exceptions;
+namespace Simpliers\Parampos\Exception;
 
 
 class ParamposException extends \Exception

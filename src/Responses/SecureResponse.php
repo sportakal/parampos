@@ -8,7 +8,7 @@ use DOMElement;
 use Http;
 use phpDocumentor\Reflection\Location;
 use PhpParser\Builder\Class_;
-use Simpliers\Parampos\Exceptions\ParamposException;
+use Simpliers\Parampos\Exception\ParamposException;
 use Simpliers\Parampos\Requests\SecurePaymentInterface;
 
 class SecureResponse extends ResponseModel
