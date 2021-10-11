@@ -12,6 +12,8 @@ use Simpliers\Parampos\Requests\SecurePaymentInterface;
 class ResponseModel
 {
     protected $raw_result;
+
+
     protected $parampos_log;
 
     /**
@@ -86,6 +88,14 @@ class ResponseModel
     public function getBankResultCode()
     {
         return $this->raw_result['Banka_Sonuc_Kod'] ?? null;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRawResult()
+    {
+        return $this->raw_result;
     }
 
     private function saveLog($payment_result)
