@@ -20,9 +20,9 @@ class ParamposServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(
-            __DIR__ . '/../config/' . $this->packageName . '.php', $this->packageName
-        );
+//        $this->mergeConfigFrom(
+//            __DIR__ . '/../config/' . $this->packageName . '.php', $this->packageName
+//        );
     }
 
     /**
@@ -55,9 +55,9 @@ class ParamposServiceProvider extends ServiceProvider
     protected function bootForConsole()
     {
         // Publishing the configuration file
-        $this->publishes([
-            __DIR__ . '/../config/' . $this->packageName . '.php' => config_path($this->packageName . '.php'),
-        ], 'config');
+//        $this->publishes([
+//            __DIR__ . '/../config/' . $this->packageName . '.php' => config_path($this->packageName . '.php'),
+//        ], 'config');
 
         /**
          * // Publishing the translation files
