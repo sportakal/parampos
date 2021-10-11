@@ -6,6 +6,7 @@ namespace Simpliers\Parampos\Request;
 
 use DOMDocument;
 use DOMElement;
+use Simpliers\Parampos\Config\Config;
 use Simpliers\Parampos\Exception\ParamposException;
 
 trait MakeRequest
@@ -58,13 +59,13 @@ trait MakeRequest
         'Siparis_ID' => 'Siparis_ID',
     ];
 
-    protected function setCredentials()
+    public function setCredentials(Config $config)
     {
-        $this->client_code = config('parampos.param.client_code', '10738');
-        $this->client_username = config('parampos.param.client_username', 'Test');
-        $this->client_password = config('parampos.param.client_password', 'Test');
-        $this->guid = config('parampos.param.guid', '0c13d406-873b-403b-9c09-a5766840d98c');
-        if (config('parampos.param.environment', 'test') == 'test') {
+        $this->client_code = $config->getClientCode(); //config('parampos.param.client_code', '10738');
+        $this->client_username = $config->getClientUsername(); // config('parampos.param.client_username', 'Test');
+        $this->client_password = $config->getClientPassword(); // config('parampos.param.client_password', 'Test');
+        $this->guid = $config->getGuid(); // config('parampos.param.guid', '0c13d406-873b-403b-9c09-a5766840d98c');
+        if ($config->getEnvironment()) { //config('parampos.param.environment', 'test') == 'test'
             $this->service_url = "https://test-dmz.param.com.tr:4443/turkpos.ws/service_turkpos_test.asmx";
         } else {
             $this->service_url = "https://posws.param.com.tr/turkpos.ws/service_turkpos_prod.asmx";
@@ -73,7 +74,7 @@ trait MakeRequest
 
     public function tryPayment()
     {
-        $this->setCredentials();
+//        $this->setCredentials();
         $this->payment_model = $this->serialize();
         $this->getHashBase64();
         $xml = $this->makeXML($this->payment_model['wsdl'], $this->payment_model);
@@ -89,7 +90,6 @@ trait MakeRequest
 
     private function getHashBase64()
     {
-        $this->setCredentials();
         $hashSHA2B64 = $this->payment_model['transaction_hash'];
         if ($hashSHA2B64) {
             $hashSHA2B64 = $this->client_code . $this->guid . $hashSHA2B64;
@@ -104,7 +104,6 @@ trait MakeRequest
 
     protected function makeXML($wsdl, $array, $add_credentials = true)
     {
-        $this->setCredentials();
         $client_code = $this->client_code;
         $client_username = $this->client_username;
         $client_password = $this->client_password;

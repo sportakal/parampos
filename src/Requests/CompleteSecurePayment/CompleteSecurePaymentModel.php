@@ -2,6 +2,7 @@
 
 namespace Simpliers\Parampos\Requests\CompleteSecurePayment;
 
+use Simpliers\Parampos\Config\Config;
 use Simpliers\Parampos\Request\MakeRequest;
 use Simpliers\Parampos\Responses\CallbackSecureResponse;
 use Simpliers\Parampos\Responses\ResponseModel;
@@ -13,11 +14,17 @@ class CompleteSecurePaymentModel
     protected $wsdl = 'TP_WMD_Pay';
 
     protected $raw_result;
-
+    protected $callbackSecureResponse;
 
     public function __construct(CallbackSecureResponse $callbackSecureResponse)
     {
-        $callbackSecureResponse_array = $callbackSecureResponse->serialize();
+        $this->callbackSecureResponse = $callbackSecureResponse;
+
+    }
+
+    public function make()
+    {
+        $callbackSecureResponse_array = $this->callbackSecureResponse->serialize();
 
         $post_fields = [
             'UCD_MD' => $callbackSecureResponse_array['md'],
@@ -27,12 +34,13 @@ class CompleteSecurePaymentModel
 
         $xml = $this->makeXML($this->wsdl, $post_fields);
         $response_xml = $this->curl($xml, $this->wsdl);
+
         $response = self::parseXML($response_xml);
         $this->raw_result = $response;
 
 
         if (config('parampos.param.save_log')) {
-            $this->saveLog($callbackSecureResponse);
+            $this->saveLog($this->callbackSecureResponse);
         }
 
         return $this->raw_result;

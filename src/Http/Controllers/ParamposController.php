@@ -4,6 +4,7 @@ namespace Simpliers\Parampos\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Simpliers\Parampos\Config\Config;
 use Simpliers\Parampos\Requests\CompleteSecurePayment\CompleteSecurePaymentModel;
 use Simpliers\Parampos\Requests\MPaymentModel\NonSecureMPayment;
 use Simpliers\Parampos\Requests\PreAuth\CancelPreAuthPayment;
@@ -22,7 +23,16 @@ class ParamposController extends Controller
         echo '<br>';
 
         if ($result->getMdStatus()) {
+            $config = new Config();
+            $config->setClientCode(env('PARAM_CLIENT_CODE', 10738));
+            $config->setClientUsername(env('PARAM_CLIENT_USERNAME', 'Test'));
+            $config->setClientPassword(env('PARAM_CLIENT_PASSWORD', 'Test'));
+            $config->setGuid(env('PARAM_GUID', '0c13d406-873b-403b-9c09-a5766840d98c'));
+            $config->setEnvironment(env('PARAM_ENVIRONMENT', 'test'));
+            $config->setSaveLog(env('PARAM_SAVE_LOG', true));
+
             $com = new CompleteSecurePaymentModel($result);
+            $com->setCredentials($config);
             if ($com->getCompleteStatus()) {
                 dd($com->getCompleteMessage());
             }
@@ -33,6 +43,14 @@ class ParamposController extends Controller
 
     public function nonSecureTest()
     {
+        $config = new Config();
+        $config->setClientCode(env('PARAM_CLIENT_CODE', 10738));
+        $config->setClientUsername(env('PARAM_CLIENT_USERNAME', 'Test'));
+        $config->setClientPassword(env('PARAM_CLIENT_PASSWORD', 'Test'));
+        $config->setGuid(env('PARAM_GUID', '0c13d406-873b-403b-9c09-a5766840d98c'));
+        $config->setEnvironment(env('PARAM_ENVIRONMENT', 'test'));
+        $config->setSaveLog(env('PARAM_SAVE_LOG', true));
+
         $model = new NonSecureMPayment();
         $model->setCardHolder('okesmez');
         $model->setCardNumber('4022774022774026');
@@ -52,6 +70,7 @@ class ParamposController extends Controller
         $model->setTransactionId(strtotime('now'));
         $model->setData1('Bu data 1');
         $model->setData2('Bu data 2');
+        $model->setCredentials($config);
         $model->tryPayment();
 
         $result = new NonSecureResponse($model);
@@ -60,6 +79,14 @@ class ParamposController extends Controller
 
     public function secureTest()
     {
+        $config = new Config();
+        $config->setClientCode(env('PARAM_CLIENT_CODE', 10738));
+        $config->setClientUsername(env('PARAM_CLIENT_USERNAME', 'Test'));
+        $config->setClientPassword(env('PARAM_CLIENT_PASSWORD', 'Test'));
+        $config->setGuid(env('PARAM_GUID', '0c13d406-873b-403b-9c09-a5766840d98c'));
+        $config->setEnvironment(env('PARAM_ENVIRONMENT', 'test'));
+        $config->setSaveLog(env('PARAM_SAVE_LOG', true));
+
         $model = new SecurePreAuthPayment();
         $model->setCardHolder('okesmez');
         $model->setCardNumber('4022774022774026');
@@ -79,6 +106,7 @@ class ParamposController extends Controller
         $model->setTransactionId(strtotime('now'));
         $model->setData1('Bu data 1');
         $model->setData2('Bu data 2');
+        $model->setCredentials($config);
         $model->tryPayment();
 
         $result = new SecureResponse($model);
@@ -91,6 +119,14 @@ class ParamposController extends Controller
 
     public function closePreAuth()
     {
+        $config = new Config();
+        $config->setClientCode(env('PARAM_CLIENT_CODE', 10738));
+        $config->setClientUsername(env('PARAM_CLIENT_USERNAME', 'Test'));
+        $config->setClientPassword(env('PARAM_CLIENT_PASSWORD', 'Test'));
+        $config->setGuid(env('PARAM_GUID', '0c13d406-873b-403b-9c09-a5766840d98c'));
+        $config->setEnvironment(env('PARAM_ENVIRONMENT', 'test'));
+        $config->setSaveLog(env('PARAM_SAVE_LOG', true));
+
         $pre_auth_id = "5d142f07-321c-46ce-a2a9-616bd41844ad";
         $pre_auth_amount = "15";
         $order_id = "";
@@ -98,6 +134,7 @@ class ParamposController extends Controller
         $close_pre_auth->setPreAuthId($pre_auth_id);
         $close_pre_auth->setPreAuthAmount($pre_auth_amount);
         $close_pre_auth->setOrderId($order_id);
+        $close_pre_auth->setCredentials($config);
         $close_pre_auth->tryPayment();
 
         $result = new NonSecureResponse($close_pre_auth);
@@ -106,12 +143,21 @@ class ParamposController extends Controller
 
     public function cancelPreAuth()
     {
+        $config = new Config();
+        $config->setClientCode(env('PARAM_CLIENT_CODE', 10738));
+        $config->setClientUsername(env('PARAM_CLIENT_USERNAME', 'Test'));
+        $config->setClientPassword(env('PARAM_CLIENT_PASSWORD', 'Test'));
+        $config->setGuid(env('PARAM_GUID', '0c13d406-873b-403b-9c09-a5766840d98c'));
+        $config->setEnvironment(env('PARAM_ENVIRONMENT', 'test'));
+        $config->setSaveLog(env('PARAM_SAVE_LOG', true));
+
         $pre_auth_id = "5d142f07-321c-46ce-a2a9-616bd41844ad";
         $pre_auth_amount = "15";
         $order_id = "";
         $close_pre_auth = new CancelPreAuthPayment();
         $close_pre_auth->setPreAuthId($pre_auth_id);
         $close_pre_auth->setOrderId($order_id);
+        $close_pre_auth->setCredentials($config);
         $close_pre_auth->tryPayment();
 
         $result = new NonSecureResponse($close_pre_auth);
