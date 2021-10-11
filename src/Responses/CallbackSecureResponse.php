@@ -34,7 +34,7 @@ class CallbackSecureResponse extends ResponseModel
         $this->transactionGUID = $this->raw_result['islemGUID'] ?? null;
         $this->transactionHash = $this->raw_result['islemHash'] ?? null;
 
-        if (config('parampos.param.save_log')) {
+        if (true) {
             $this->addLog();
         }
     }

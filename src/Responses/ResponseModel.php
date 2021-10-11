@@ -29,7 +29,8 @@ class ResponseModel
         if ($payment_result instanceof PaymentInterface) {
             $this->raw_result = $payment_result->getRawResult();
 
-            if (config('parampos.param.client_code')) {
+            if (true) {
+                //TODO connect savelog variable in Config
                 $this->saveLog($payment_result);
             }
         } else {

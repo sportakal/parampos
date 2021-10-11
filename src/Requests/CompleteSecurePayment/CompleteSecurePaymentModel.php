@@ -39,7 +39,8 @@ class CompleteSecurePaymentModel
         $this->raw_result = $response;
 
 
-        if (config('parampos.param.save_log')) {
+        if (true) {
+            //TODO connect savelog variable in Config
             $this->saveLog($this->callbackSecureResponse);
         }
 
