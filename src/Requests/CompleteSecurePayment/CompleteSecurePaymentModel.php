@@ -129,7 +129,6 @@ class CompleteSecurePaymentModel
     public function serialize()
     {
         return get_object_vars($this);
-        // TODO: Implement jsonSerialize() method.
     }
 
     private function saveLog($callbackSecureResponse)

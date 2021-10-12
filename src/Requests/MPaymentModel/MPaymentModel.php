@@ -550,6 +550,5 @@ class MPaymentModel
     {
         $this->makeHash();
         return get_object_vars($this);
-        // TODO: Implement jsonSerialize() method.
     }
 }

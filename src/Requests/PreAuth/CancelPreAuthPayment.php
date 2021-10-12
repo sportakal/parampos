@@ -73,6 +73,5 @@ class CancelPreAuthPayment implements NonSecurePaymentInterface
     {
         $this->makeHash();
         return get_object_vars($this);
-        // TODO: Implement jsonSerialize() method.
     }
 }
