@@ -2,7 +2,7 @@
 
 namespace Simpliers\Parampos\Models;
 
-use App\Models\User;
+use Simpliers\User\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
