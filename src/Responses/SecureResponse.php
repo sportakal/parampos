@@ -1,15 +1,15 @@
 <?php
 
 
-namespace Simpliers\Parampos\Responses;
+namespace Sportakal\Parampos\Responses;
 
 use DOMDocument;
 use DOMElement;
 use Http;
 use phpDocumentor\Reflection\Location;
 use PhpParser\Builder\Class_;
-use Simpliers\Parampos\Exception\ParamposException;
-use Simpliers\Parampos\Requests\SecurePaymentInterface;
+use Sportakal\Parampos\Exception\ParamposException;
+use Sportakal\Parampos\Requests\SecurePaymentInterface;
 
 class SecureResponse extends ResponseModel
 {

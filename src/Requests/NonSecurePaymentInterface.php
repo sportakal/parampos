@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Simpliers\Parampos\Requests;
+namespace Sportakal\Parampos\Requests;
 
 interface NonSecurePaymentInterface extends PaymentInterface
 {

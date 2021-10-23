@@ -1,11 +1,11 @@
 <?php
 
-namespace Simpliers\Parampos\Requests\CompleteSecurePayment;
+namespace Sportakal\Parampos\Requests\CompleteSecurePayment;
 
-use Simpliers\Parampos\Config\Config;
-use Simpliers\Parampos\Request\MakeRequest;
-use Simpliers\Parampos\Responses\CallbackSecureResponse;
-use Simpliers\Parampos\Responses\ResponseModel;
+use Sportakal\Parampos\Config\Config;
+use Sportakal\Parampos\Request\MakeRequest;
+use Sportakal\Parampos\Responses\CallbackSecureResponse;
+use Sportakal\Parampos\Responses\ResponseModel;
 
 class CompleteSecurePaymentModel
 {

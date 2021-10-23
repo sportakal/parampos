@@ -14,12 +14,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Simpliers\\Parampos\\": "./src"
+      "Sportakal\\Parampos\\": "./src"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Simpliers\\Parampos\\Tests\\": "tests"
+      "Sportakal\\Parampos\\Tests\\": "tests"
     }
   },
   "scripts": {
@@ -28,7 +28,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Simpliers\\Parampos\\ParamposServiceProvider"
+        "Sportakal\\Parampos\\ParamposServiceProvider"
       ]
     }
   }

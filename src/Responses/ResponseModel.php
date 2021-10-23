@@ -1,13 +1,13 @@
 <?php
 
 
-namespace Simpliers\Parampos\Responses;
+namespace Sportakal\Parampos\Responses;
 
 
 use Illuminate\Database\Eloquent\Model;
-use Simpliers\Parampos\Models\ParamposLog;
-use Simpliers\Parampos\Requests\PaymentInterface;
-use Simpliers\Parampos\Requests\SecurePaymentInterface;
+use Sportakal\Parampos\Models\ParamposLog;
+use Sportakal\Parampos\Requests\PaymentInterface;
+use Sportakal\Parampos\Requests\SecurePaymentInterface;
 
 class ResponseModel
 {

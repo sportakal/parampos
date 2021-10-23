@@ -1,10 +1,10 @@
 <?php
 
-namespace Simpliers\Parampos\Requests\MPaymentModel;
+namespace Sportakal\Parampos\Requests\MPaymentModel;
 
 
-use Simpliers\Parampos\Request\MakeRequest;
-use Simpliers\Parampos\Requests\PaymentInterface;
+use Sportakal\Parampos\Request\MakeRequest;
+use Sportakal\Parampos\Requests\PaymentInterface;
 
 class MPaymentModel
 {

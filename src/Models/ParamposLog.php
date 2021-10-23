@@ -1,8 +1,8 @@
 <?php
 
-namespace Simpliers\Parampos\Models;
+namespace Sportakal\Parampos\Models;
 
-use Simpliers\User\Models\User;
+use Simplihub\User\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 

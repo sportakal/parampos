@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Simpliers\Parampos\Requests\ForeignCurrency;
+namespace Sportakal\Parampos\Requests\ForeignCurrency;
 
 
-use Simpliers\Parampos\Request\MakeRequest;
-use Simpliers\Parampos\Requests\PaymentInterface;
+use Sportakal\Parampos\Request\MakeRequest;
+use Sportakal\Parampos\Requests\PaymentInterface;
 
 class ForeignCurrencyModel
 {

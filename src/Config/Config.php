@@ -1,6 +1,6 @@
 <?php
 
-namespace Simpliers\Parampos\Config;
+namespace Sportakal\Parampos\Config;
 
 class Config
 {

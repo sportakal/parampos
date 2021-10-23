@@ -1,9 +1,9 @@
 <?php
 
-namespace Simpliers\Parampos\Requests\ForeignCurrency;
+namespace Sportakal\Parampos\Requests\ForeignCurrency;
 
 
-use Simpliers\Parampos\Requests\NonSecurePaymentInterface;
+use Sportakal\Parampos\Requests\NonSecurePaymentInterface;
 
 class NonSecureForeignCurrencyPayment extends ForeignCurrencyModel implements NonSecurePaymentInterface
 {

@@ -1,18 +1,18 @@
 <?php
 
-namespace Simpliers\Parampos\Http\Controllers;
+namespace Sportakal\Parampos\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Simpliers\Parampos\Config\Config;
-use Simpliers\Parampos\Requests\CompleteSecurePayment\CompleteSecurePaymentModel;
-use Simpliers\Parampos\Requests\MPaymentModel\NonSecureMPayment;
-use Simpliers\Parampos\Requests\PreAuth\CancelPreAuthPayment;
-use Simpliers\Parampos\Requests\PreAuth\ClosePreAuthPayment;
-use Simpliers\Parampos\Requests\PreAuth\SecurePreAuthPayment;
-use Simpliers\Parampos\Responses\CallbackSecureResponse;
-use Simpliers\Parampos\Responses\NonSecureResponse;
-use Simpliers\Parampos\Responses\SecureResponse;
+use Sportakal\Parampos\Config\Config;
+use Sportakal\Parampos\Requests\CompleteSecurePayment\CompleteSecurePaymentModel;
+use Sportakal\Parampos\Requests\MPaymentModel\NonSecureMPayment;
+use Sportakal\Parampos\Requests\PreAuth\CancelPreAuthPayment;
+use Sportakal\Parampos\Requests\PreAuth\ClosePreAuthPayment;
+use Sportakal\Parampos\Requests\PreAuth\SecurePreAuthPayment;
+use Sportakal\Parampos\Responses\CallbackSecureResponse;
+use Sportakal\Parampos\Responses\NonSecureResponse;
+use Sportakal\Parampos\Responses\SecureResponse;
 
 class ParamposController extends Controller
 {

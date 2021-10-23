@@ -1,9 +1,9 @@
 <?php
 
 
-namespace Simpliers\Parampos\Requests;
+namespace Sportakal\Parampos\Requests;
 
-use Simpliers\Parampos\Request\MakeRequest;
+use Sportakal\Parampos\Request\MakeRequest;
 
 interface PaymentInterface
 {

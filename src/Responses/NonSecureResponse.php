@@ -1,12 +1,12 @@
 <?php
 
 
-namespace Simpliers\Parampos\Responses;
+namespace Sportakal\Parampos\Responses;
 
 use DOMDocument;
 use DOMElement;
-use Simpliers\Parampos\Exception\ParamposException;
-use Simpliers\Parampos\Requests\NonSecurePaymentInterface;
+use Sportakal\Parampos\Exception\ParamposException;
+use Sportakal\Parampos\Requests\NonSecurePaymentInterface;
 
 class NonSecureResponse extends ResponseModel
 {

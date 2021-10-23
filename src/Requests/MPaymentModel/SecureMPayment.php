@@ -1,9 +1,9 @@
 <?php
 
-namespace Simpliers\Parampos\Requests\MPaymentModel;
+namespace Sportakal\Parampos\Requests\MPaymentModel;
 
 
-use Simpliers\Parampos\Requests\NonSecurePaymentInterface;
+use Sportakal\Parampos\Requests\NonSecurePaymentInterface;
 
 class SecureMPayment extends MPaymentModel implements NonSecurePaymentInterface
 {

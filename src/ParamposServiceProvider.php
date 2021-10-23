@@ -1,16 +1,13 @@
 <?php
 
-namespace Simpliers\Parampos;
+namespace Sportakal\Parampos;
 
-use Carbon\Carbon;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
-use Simpliers\Support\Models\MessageThreadParticipant;
 
 class ParamposServiceProvider extends ServiceProvider
 {
 
-    protected $vendorName = "simpliers";
+    protected $vendorName = "sportakal";
     protected $packageName = "parampos";
 
     /**

@@ -1,13 +1,13 @@
 <?php
 
 
-namespace Simpliers\Parampos\Request;
+namespace Sportakal\Parampos\Request;
 
 
 use DOMDocument;
 use DOMElement;
-use Simpliers\Parampos\Config\Config;
-use Simpliers\Parampos\Exception\ParamposException;
+use Sportakal\Parampos\Config\Config;
+use Sportakal\Parampos\Exception\ParamposException;
 
 trait MakeRequest
 {

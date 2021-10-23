@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Simpliers\Parampos\Responses;
+namespace Sportakal\Parampos\Responses;
 
 use DOMDocument;
 use DOMElement;
@@ -9,9 +9,9 @@ use Http;
 use Illuminate\Database\Eloquent\Model;
 use phpDocumentor\Reflection\Location;
 use PhpParser\Builder\Class_;
-use Simpliers\Parampos\Exception\ParamposException;
-use Simpliers\Parampos\Models\ParamposLog;
-use Simpliers\Parampos\Requests\SecurePaymentInterface;
+use Sportakal\Parampos\Exception\ParamposException;
+use Sportakal\Parampos\Models\ParamposLog;
+use Sportakal\Parampos\Requests\SecurePaymentInterface;
 
 class CallbackSecureResponse extends ResponseModel
 {

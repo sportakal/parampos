@@ -1,10 +1,10 @@
 <?php
 
-namespace Simpliers\Parampos\Requests\PreAuth;
+namespace Sportakal\Parampos\Requests\PreAuth;
 
 
-use Simpliers\Parampos\Request\MakeRequest;
-use Simpliers\Parampos\Requests\PaymentInterface;
+use Sportakal\Parampos\Request\MakeRequest;
+use Sportakal\Parampos\Requests\PaymentInterface;
 
 class PreAuthPaymentModel implements PaymentInterface
 {
