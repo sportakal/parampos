@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Simplihub\Tracker\Http\Controllers\TestController;
+use Simpli_hub\Tracker\Http\Controllers\TestController;
 
 
 Route::group(['prefix' => 'parampos', 'middleware' => 'api'], function () {

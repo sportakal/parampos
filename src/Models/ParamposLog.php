@@ -2,7 +2,7 @@
 
 namespace Sportakal\Parampos\Models;
 
-use Simplihub\User\Models\User;
+use Simpli_hub\User\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
